@@ -1,0 +1,23 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+
+.field {
+    margin: 1rem;
+    margin-left: 0;
+
+    &__label{
+        margin-right: .5rem;
+    }
+
+    &__input {
+        outline: none;
+        border: 1px solid $brown;
+        border-radius: 5px;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $yellow;
+        }
+    }
+}

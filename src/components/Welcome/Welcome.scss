@@ -1,0 +1,28 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+
+.landing {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    &__header {
+        color: $orange;
+    }
+
+    &__text {
+        color: $orange;
+    }
+
+    &__button {
+        color: white;
+        margin: 1rem;
+        border: 1px solid $brown;
+        border-radius: 5px;
+        background-image: linear-gradient($orange, $yellow);
+        width: 100px;
+        height: 45px;
+    }
+}

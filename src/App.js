@@ -5,6 +5,7 @@ import LoginPage from './routes/LoginPage/LoginPage';
 import RegisterPage from './routes/RegisterPage/RegisterPage';
 import LandingPage from './routes/LandingPage/LandingPage';
 import ClothesPage from './routes/ClothesPage/ClothesPage';
+import AddPage from './routes/AddPage/AddPage';
 function App() {
   return (
     <div className="App">
@@ -14,7 +15,8 @@ function App() {
           <Route path='/' exact element={<LandingPage />}/>
           <Route path='/login' element={<LoginPage />}/>
           <Route path='/register' element={<RegisterPage />}/>
-          <Route path='/clothes' element={<ClothesPage />}/>
+          <Route path='/clothes' exact element={<ClothesPage />}/>
+          <Route path='/clothes/add' element={<AddPage />}/>
         </Routes>
       </BrowserRouter>
     </div>

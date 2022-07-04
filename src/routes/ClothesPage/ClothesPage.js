@@ -2,15 +2,19 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import './ClothesPage.scss';
 import ClothCard from "../../components/ClothCard/ClothCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const API = process.env.REACT_APP_API_URL;
 export default function ClothesPage(){
     
     const [clothes, setClothes] = useState({loading: true});
     const [render, setRender] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         let token = sessionStorage.getItem('authToken');
+        if(!token){
+            navigate('/');
+        }
         axios.get(`${API}/user/data`, {
             headers: {
                 authorization: `Bearer ${token}`
