@@ -1,0 +1,27 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+
+.header {
+    @include font;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 5px 1px #ffc857;
+    padding-bottom: 1rem;
+
+    &__link{
+        text-decoration: none;
+    }
+
+    &__nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__logo{
+        margin-top: 1rem;
+        max-width: 64px;
+    }
+}

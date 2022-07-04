@@ -1,0 +1,9 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+
+.clothes-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
