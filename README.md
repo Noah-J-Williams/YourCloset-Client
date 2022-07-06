@@ -130,9 +130,16 @@ I learned that UI design is much more difficult that I had initially thought, an
 Next steps:
 
 Add image uploading so a user can see what their clothing item looks like
+
 Add a search function so it is easier to find the clothing you want to wear when you have a large amount
+
 Add a drag and drop outfit preview so create outfits in the app so you don't have to root through your closet
+
 Break down components to make code more DRY
+
 Reduce API calls to reduce cost if deployed
+
 Increase effectiveness and understanding of React Hooks
+
 Create the app in React Native for mobile devices
+
