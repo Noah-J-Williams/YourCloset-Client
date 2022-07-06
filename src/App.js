@@ -6,6 +6,7 @@ import RegisterPage from './routes/RegisterPage/RegisterPage';
 import LandingPage from './routes/LandingPage/LandingPage';
 import ClothesPage from './routes/ClothesPage/ClothesPage';
 import AddPage from './routes/AddPage/AddPage';
+import ProfilePage from './routes/ProfilePage/ProfilePage';
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
           <Route path='/register' element={<RegisterPage />}/>
           <Route path='/clothes' exact element={<ClothesPage />}/>
           <Route path='/clothes/add' element={<AddPage />}/>
+          <Route path='/profile' element={<ProfilePage />}/>
         </Routes>
       </BrowserRouter>
     </div>

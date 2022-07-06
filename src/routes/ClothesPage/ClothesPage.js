@@ -7,6 +7,7 @@ const API = process.env.REACT_APP_API_URL;
 export default function ClothesPage(){
     
     const [clothes, setClothes] = useState({loading: true});
+    const [display, setDisplay] = useState("all");
     const [render, setRender] = useState(false);
     const navigate = useNavigate();
 
@@ -21,7 +22,21 @@ export default function ClothesPage(){
             }
         })
         .then((item) => {
-            setClothes(item.data);
+            if(display === "all"){
+                setClothes(item.data.sort((a,b) => b.cost/b.wears - a.cost/a.wears));
+            }
+            else if(display === "headwear"){
+                setClothes(item.data.filter(cloth => cloth.category === "headwear").sort((a,b) => b.cost/b.wears - a.cost/a.wears));
+            }
+            else if(display === "top"){
+                setClothes(item.data.filter(cloth => cloth.category === "top").sort((a,b) => b.cost/b.wears - a.cost/a.wears));
+            }
+            else if(display === "bottom"){
+                setClothes(item.data.filter(cloth => cloth.category === "bottom").sort((a,b) => b.cost/b.wears - a.cost/a.wears));
+            }
+            else if(display === "shoes"){
+                setClothes(item.data.filter(cloth => cloth.category === "shoes").sort((a,b) => b.cost/b.wears - a.cost/a.wears));
+            }
         })
         .catch(err => {
             console.log(err);
@@ -83,11 +98,41 @@ export default function ClothesPage(){
         })
     }
 
+    const handleFilter = (e) => {
+        if(e.target.name === "headwear"){
+            setRender(!render);
+            return setDisplay("headwear")
+        }
+        if(e.target.name === "top"){
+            setRender(!render);
+            return setDisplay("top")
+        }
+        if(e.target.name === "bottom"){
+            setRender(!render);
+            return setDisplay("bottom")
+        }
+        if(e.target.name === "shoes"){
+            setRender(!render);
+            return setDisplay("shoes")
+        }
+
+        setDisplay("all");
+        setRender(!render);
+    }
+
+
 
     return(
         !clothes.loading ?
         <div className="clothes-page">
             <Link to='/clothes/add'><button>Add New Clothes!</button></Link>
+            <div>
+                <button onClick={handleFilter} name="headwear">Headwear</button>
+                <button onClick={handleFilter} name="top">Tops</button>
+                <button onClick={handleFilter} name="bottom">Bottoms</button>
+                <button onClick={handleFilter} name="shoes">Shoes</button>
+                <button onClick={handleFilter}>Display All</button>
+            </div>
             {clothes.map((item) => {
                 return(
                     <ClothCard 
@@ -96,6 +141,7 @@ export default function ClothesPage(){
                     handleUp={handleUp} 
                     handleDown={handleDown} 
                     handleDel={handleDel}
+                    category={item.category}
                     cost={item.cost} 
                     title={item.title} 
                     wears={item.wears}/>
