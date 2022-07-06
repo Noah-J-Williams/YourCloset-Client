@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import Input from "../../components/Input/Input";
 import { useNavigate } from "react-router-dom";
+import './RegisterPage.scss';
 const API = process.env.REACT_APP_API_URL;
 
 export default function RegisterPage() {
@@ -27,7 +28,7 @@ export default function RegisterPage() {
         
     
     return(
-        <main>
+        <main className="register">
             <form onSubmit={handleRegister}>
                 <Input
                     label='Email'
@@ -41,7 +42,7 @@ export default function RegisterPage() {
                     label='Password'
                     name='password'
                     type='password' />
-                <button>Sign up</button>
+                <button className="register__button">Sign up</button>
             </form>
         </main>
     );

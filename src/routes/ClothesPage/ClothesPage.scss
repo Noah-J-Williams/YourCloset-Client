@@ -6,4 +6,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &__button{
+        color: white;
+        margin: 1rem;
+        border: 1px solid $brown;
+        border-radius: 5px;
+        background-image: linear-gradient($orange, $yellow);
+        width: 100px;
+        height: 45px;
+    }
+}
+
+.clothes-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 1rem;
+    border-top: 1px dotted $orange;
+    border-bottom: 1px dotted $orange;
+    
+    padding-bottom: 1rem;
+
+    &__button{
+        border-right: 1px solid $orange;
+        border-left: 1px solid $orange;
+        border-top: none;
+        border-bottom: none;
+        background-color: white;
+        margin-top: 1rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
 }

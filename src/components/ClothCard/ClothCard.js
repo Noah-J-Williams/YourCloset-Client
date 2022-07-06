@@ -16,7 +16,7 @@ export default function ClothCard({clothingId, category, handleUp, handleDown, h
                 <p className="card-wears__number">{wears}</p>
                 <button onClick={() => handleUp(clothingId)} className="card-wears__button">+</button>
             </div>
-            <button onClick={() => handleDel(clothingId)}>Delete</button>
+            <button className="card__button" onClick={() => handleDel(clothingId)}>Delete</button>
         </section>
     );
 }

@@ -125,14 +125,14 @@ export default function ClothesPage(){
     return(
         !clothes.loading ?
         <div className="clothes-page">
-            <Link to='/clothes/add'><button>Add New Clothes!</button></Link>
-            <div>
-                <button onClick={handleFilter} name="headwear">Headwear</button>
-                <button onClick={handleFilter} name="top">Tops</button>
-                <button onClick={handleFilter} name="bottom">Bottoms</button>
-                <button onClick={handleFilter} name="shoes">Shoes</button>
-                <button onClick={handleFilter}>Display All</button>
+            <div className="clothes-filter">
+                <button className="clothes-filter__button" onClick={handleFilter} name="headwear">Headwear</button>
+                <button className="clothes-filter__button" onClick={handleFilter} name="top">Tops</button>
+                <button className="clothes-filter__button" onClick={handleFilter} name="bottom">Bottoms</button>
+                <button className="clothes-filter__button" onClick={handleFilter} name="shoes">Shoes</button>
+                <button className="clothes-filter__button" onClick={handleFilter}>Display All</button>
             </div>
+            <Link to='/clothes/add'><button className="clothes-page__button">Add New Clothes!</button></Link>
             {clothes.map((item) => {
                 return(
                     <ClothCard 

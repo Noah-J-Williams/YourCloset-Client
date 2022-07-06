@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import './ProfilePage.scss';
 const API = process.env.REACT_APP_API_URL;
 export default function ProfilePage() {
     
@@ -39,27 +40,32 @@ export default function ProfilePage() {
         })
     }, []);
 
-    const handleLogout = (e) => {
+    const handleLogout = () => {
         sessionStorage.clear();
+        navigate('/');
     }
     
     return(
         !clothes.loading ?
-        <main>
-            <h2>Your highest cost per wear outfit</h2>
-            <p>Cost per wear of this outfit is</p>
-            <p>{"$" + Math.round((highest.headwear.cost + highest.top.cost + highest.bottom.cost + highest.shoes.cost) / (highest.headwear.wears + highest.top.wears + highest.bottom.wears + highest.shoes.wears))}</p>
-            <p>{highest.headwear.title}</p>
-            <p>{highest.top.title}</p>
-            <p>{highest.bottom.title}</p>
-            <p>{highest.shoes.title}</p>
-            <h2>Your lowest cost per wear outfit</h2>
-            <p>{"$" + Math.round((lowest.headwear.cost + lowest.top.cost + lowest.bottom.cost + lowest.shoes.cost) / (lowest.headwear.wears + lowest.top.wears + lowest.bottom.wears + lowest.shoes.wears))}</p>
-            <p>{lowest.headwear.title}</p>
-            <p>{lowest.top.title}</p>
-            <p>{lowest.bottom.title}</p>
-            <p>{lowest.shoes.title}</p>
-            <button onClick={handleLogout}>Log out</button>
+        <main className="profile">
+            <div className="profile-outfit">
+            <h2 className="profile-outfit__header-high">Your highest cost per wear outfit</h2>
+            <p className="profile-outfit__text">Cost per wear of this outfit is</p>
+            <p className="profile-outfit__text">{"Cost/Wear = $" + Math.round((highest.headwear.cost + highest.top.cost + highest.bottom.cost + highest.shoes.cost) / (highest.headwear.wears + highest.top.wears + highest.bottom.wears + highest.shoes.wears))}</p>
+            <p className="profile-outfit__text">{highest.headwear.title}</p>
+            <p className="profile-outfit__text">{highest.top.title}</p>
+            <p className="profile-outfit__text">{highest.bottom.title}</p>
+            <p className="profile-outfit__text">{highest.shoes.title}</p>
+            </div>
+            <div className="profile-outfit">
+            <h2 className="profile-outfit__header-low">Your lowest cost per wear outfit</h2>
+            <p className="profile-outfit__text">{"Cost/Wear $" + Math.round((lowest.headwear.cost + lowest.top.cost + lowest.bottom.cost + lowest.shoes.cost) / (lowest.headwear.wears + lowest.top.wears + lowest.bottom.wears + lowest.shoes.wears))}</p>
+            <p className="profile-outfit__text">{lowest.headwear.title}</p>
+            <p className="profile-outfit__text">{lowest.top.title}</p>
+            <p className="profile-outfit__text">{lowest.bottom.title}</p>
+            <p className="profile-outfit__text">{lowest.shoes.title}</p>
+            </div>
+            <button onClick={handleLogout} className="profile__button">Log out</button>
         </main>
         :
         <>

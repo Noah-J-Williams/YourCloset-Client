@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from '../../components/Input/Input';
+import './AddPage.scss'
 const API = process.env.REACT_APP_API_URL;
 export default function AddPage() {
     const navigate = useNavigate();
@@ -33,7 +34,7 @@ export default function AddPage() {
     };
 
     return(
-        <main>
+        <main className="add">
             <form onSubmit={handleSubmit}>
                 <Input
                 label="Name"
@@ -43,13 +44,16 @@ export default function AddPage() {
                 label="Cost"
                 name="cost"
                 type="float" />
-                <select value={value} onChange={handleChange}>
-                    <option value="headwear">Headwear</option>
-                    <option value="top">Top</option>
-                    <option value="bottom">Bottom</option>
-                    <option value="shoes">Shoes</option>
+                <label className="add__label">
+                    Category
+                <select className="add__select" value={value} onChange={handleChange}>
+                    <option className="add__option" value="headwear">Headwear</option>
+                    <option className="add__option" value="top">Top</option>
+                    <option className="add__option" value="bottom">Bottom</option>
+                    <option className="add__option" value="shoes">Shoes</option>
                 </select>
-                <button>Add</button>
+                </label>
+                <button className="add__button">Add</button>
             </form>
         </main>
     );
