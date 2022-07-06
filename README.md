@@ -14,57 +14,125 @@ Create-react-app, React Router v6, Axios, Sass
 Back-end:
 Node.js, JWT (JSON Web Tokens), BCrypt, MySQL, Knex, express
 
-### `npm test`
+Project Setup (Development)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install required dependencies with npm
+`cd client && npm i`
+`cd server && npm i`
 
-### `npm run build`
+Back-end setup:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create a MySQL Database and connect it through Knex with `knex init`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://user-images.githubusercontent.com/103670304/177542034-694b9813-a3b1-4450-883d-d1bfcce577da.png)  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Add a secret key to the .env (can be any string), and a port of your choosing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![image](https://user-images.githubusercontent.com/103670304/177542398-4390c351-1eb1-4356-83c3-439f7f06de5c.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Front-end setup:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Add the project url to the `.env` in the client folder
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![image](https://user-images.githubusercontent.com/103670304/177542740-25601334-a730-4c47-8d41-e54a08012fdb.png)
 
-## Learn More
+##Run the server and client
+I use two terminals, for the client user `npm start`
+and for the server use `node server.js`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Server end-points
+all endpoints prefixed by /user
+## /register
+registers a user
+`{
+  username: "username string",
+  email: "valid email string",
+  password: "password string
+}`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## /login
+login a user, send a jwt token to the client
 
-### Code Splitting
+`{
+  email: "valid email string",
+  password: "correct password string"
+}`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## /data
+a get request to /data will return all of the clothing items for a logged in user
 
-### Analyzing the Bundle Size
+a post request to /data will add a new clothing item with 
+`{
+  cost: "cost float",
+  title: "title string",
+  category: "category string"
+}`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+a delete request to /data will delete the clothing item with the specified id
 
-### Making a Progressive Web App
+`{
+  clothingId: "id int"
+}`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## /upWear
+increments the wears by one by the clothing id
 
-### Advanced Configuration
+`{
+  clothingId: "id int"
+}`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## /downWear
+decrements the wears by one by the clothing id
 
-### Deployment
+`{
+  clothingId: "id int"
+}`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Features
+A user is greeted by the landing page with two CTAs
+To login to their account or register a new one
 
-### `npm run build` fails to minify
+![image](https://user-images.githubusercontent.com/103670304/177544629-8412ee71-8eba-4d75-9726-78b7592aa71f.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+![image](https://user-images.githubusercontent.com/103670304/177544499-f2a207b8-c7b2-4a89-a5b7-d2f6cf76345c.png)
+
+Add a new clothing item with cost, name, and category
+
+![image](https://user-images.githubusercontent.com/103670304/177544721-6d185172-9d31-43c0-bb53-b3f24dc34334.png)
+
+![image](https://user-images.githubusercontent.com/103670304/177544746-d2dad75e-085a-4386-b1e3-7e213502853e.png)
+
+View the highest and lowest cost per wear outfits on their profile page
+
+![image](https://user-images.githubusercontent.com/103670304/177544769-13a54b18-b06c-4b94-9a34-b1ef1c94133f.png)
+![image](https://user-images.githubusercontent.com/103670304/177544789-1758bb8a-bd8c-46b8-a31d-d8ac5557d7a7.png)
+
+Log out on their profile page
+
+![image](https://user-images.githubusercontent.com/103670304/177544807-af2e42c3-72ec-42d6-8844-1fa730742d7a.png)
+
+View their clothing items by category
+
+![image](https://user-images.githubusercontent.com/103670304/177545007-0a4f84a4-e16b-4ad9-8ea1-9754456ab92d.png)
+
+Delete clothing items
+Increase or decrease the wears of a specific item
+View the cost per wear of an item
+
+![image](https://user-images.githubusercontent.com/103670304/177545079-f5e31532-360d-45a4-a988-487e40c7acf3.png)
+
+Lessons learned:
+
+I learned that UI design is much more difficult that I had initially thought, and that having a good idea of what components will be on the page helps to keep code DRY and encapsulate different items into their respective components. When breaking things down into components at the end, it begins to be hard to see which components share items between them.
+
+Next steps:
+
+Add image uploading so a user can see what their clothing item looks like
+Add a search function so it is easier to find the clothing you want to wear when you have a large amount
+Add a drag and drop outfit preview so create outfits in the app so you don't have to root through your closet
+Break down components to make code more DRY
+Reduce API calls to reduce cost if deployed
+Increase effectiveness and understanding of React Hooks
+Create the app in React Native for mobile devices
