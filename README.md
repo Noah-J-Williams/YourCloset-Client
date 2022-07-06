@@ -14,7 +14,8 @@ Create-react-app, React Router v6, Axios, Sass
 Back-end:
 Node.js, JWT (JSON Web Tokens), BCrypt, MySQL, Knex, express
 
-Project Setup (Development)
+## Project setup (Development)
+Download the code from my capstone and capstone-server repos.
 
 Install required dependencies with npm
 `cd client && npm i`
