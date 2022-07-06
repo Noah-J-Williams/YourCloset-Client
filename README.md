@@ -4,7 +4,7 @@ A closet app that lets you keep track of your clothes to make sure you aren't wa
 
 ## Brainstation Web Development Capstone Project
 
-The problem: My fiance has a clost filled with all kinds of cool clothing, but always talks about how she never wears some of the clothing she owns, and ponders on how much money she spent to wear something even just once, so I decided I would make an app to help her catalogue all of her clothing to make sure she get the most she can out of every clothing purchase, and to increase her mindfullness when it comes to purchasing clothing as to reduce consume waste.
+The problem: My fiance has a closet filled with all kinds of cool clothing, but always talks about how she never wears some of the clothing she owns and ponders on how much money she spent to wear something even just once, so I decided I would make an app to help her catalogue all of her clothing to make sure she gets the most she can out of every clothing purchase, and to increase her mindfulness when it comes to purchasing clothing as to reduce consume waste.
 
 ## Tech Stack
 
@@ -34,7 +34,7 @@ Add a secret key to the .env (can be any string), and a port of your choosing
 
 Front-end setup:
 
-Add the project url to the `.env` in the client folder
+Add the project URL to the `.env` in the client folder
 
 ![image](https://user-images.githubusercontent.com/103670304/177542740-25601334-a730-4c47-8d41-e54a08012fdb.png)
 
@@ -53,7 +53,7 @@ registers a user
 }`
 
 ## /login
-login a user, send a jwt token to the client
+login a user, send a JWT to the client
 
 `{
   email: "valid email string",
@@ -61,7 +61,7 @@ login a user, send a jwt token to the client
 }`
 
 ## /data
-a get request to /data will return all of the clothing items for a logged in user
+a get request to /data will return all of the clothing items for a logged-in user
 
 a post request to /data will add a new clothing item with 
 `{
@@ -92,7 +92,7 @@ decrements the wears by one by the clothing id
 
 ## Features
 A user is greeted by the landing page with two CTAs
-To login to their account or register a new one
+To log in to their account or register a new one
 
 ![image](https://user-images.githubusercontent.com/103670304/177544629-8412ee71-8eba-4d75-9726-78b7592aa71f.png)
 
@@ -105,7 +105,7 @@ Add a new clothing item with cost, name, and category
 
 ![image](https://user-images.githubusercontent.com/103670304/177544746-d2dad75e-085a-4386-b1e3-7e213502853e.png)
 
-View the highest and lowest cost per wear outfits on their profile page
+View the highest and lowest cost-per-wear outfits on their profile page
 
 ![image](https://user-images.githubusercontent.com/103670304/177544769-13a54b18-b06c-4b94-9a34-b1ef1c94133f.png)
 ![image](https://user-images.githubusercontent.com/103670304/177544789-1758bb8a-bd8c-46b8-a31d-d8ac5557d7a7.png)
@@ -126,7 +126,7 @@ View the cost per wear of an item
 
 Lessons learned:
 
-I learned that UI design is much more difficult that I had initially thought, and that having a good idea of what components will be on the page helps to keep code DRY and encapsulate different items into their respective components. When breaking things down into components at the end, it begins to be hard to see which components share items between them.
+I learned that UI design is much more difficult than I had initially thought and that having a good idea of what components will be on the page helps to keep code DRY and encapsulate different items into their respective components. When breaking things down into components at the end, it begins to be hard to see which components share items between them.
 
 Next steps:
 
@@ -134,7 +134,7 @@ Add image uploading so a user can see what their clothing item looks like
 
 Add a search function so it is easier to find the clothing you want to wear when you have a large amount
 
-Add a drag and drop outfit preview so create outfits in the app so you don't have to root through your closet
+Add a drag-and-drop outfit preview to create outfits in the app so you don't have to root through your closet
 
 Break down components to make code more DRY
 
