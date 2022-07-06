@@ -1,18 +1,18 @@
-# Getting Started with Create React App
+# YourCloset
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A closet app that lets you keep track of your clothes to make sure you aren't wasting money on things you won't wear.
 
-## Available Scripts
+## Brainstation Web Development Capstone Project
 
-In the project directory, you can run:
+The problem: My fiance has a clost filled with all kinds of cool clothing, but always talks about how she never wears some of the clothing she owns, and ponders on how much money she spent to wear something even just once, so I decided I would make an app to help her catalogue all of her clothing to make sure she get the most she can out of every clothing purchase, and to increase her mindfullness when it comes to purchasing clothing as to reduce consume waste.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Front-end:
+Create-react-app, React Router v6, Axios, Sass
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Back-end:
+Node.js, JWT (JSON Web Tokens), BCrypt, MySQL, Knex, express
 
 ### `npm test`
 
