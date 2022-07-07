@@ -48,23 +48,32 @@ export default function ProfilePage() {
     return(
         !clothes.loading ?
         <main className="profile">
-            <div className="profile-outfit">
-            <h2 className="profile-outfit__header-high">Your highest cost per wear outfit</h2>
-            <p className="profile-outfit__text">Cost per wear of this outfit is</p>
-            <p className="profile-outfit__text">{"Cost/Wear = $" + Math.round((highest.headwear.cost + highest.top.cost + highest.bottom.cost + highest.shoes.cost) / (highest.headwear.wears + highest.top.wears + highest.bottom.wears + highest.shoes.wears))}</p>
-            <p className="profile-outfit__text">{highest.headwear.title}</p>
-            <p className="profile-outfit__text">{highest.top.title}</p>
-            <p className="profile-outfit__text">{highest.bottom.title}</p>
-            <p className="profile-outfit__text">{highest.shoes.title}</p>
+            {highest.headwear && highest.top && highest.bottom && highest.shoes ? 
+            <div>
+                <div className="profile-outfit">
+                <h2 className="profile-outfit__header-high">Your highest cost per wear outfit</h2>
+                <p className="profile-outfit__text">Cost per wear of this outfit is</p>
+                <p className="profile-outfit__text">{"Cost/Wear = $" + Math.round((highest.headwear.cost + highest.top.cost + highest.bottom.cost + highest.shoes.cost) / (highest.headwear.wears + highest.top.wears + highest.bottom.wears + highest.shoes.wears))}</p>
+                <p className="profile-outfit__text">{highest.headwear.title}</p>
+                <p className="profile-outfit__text">{highest.top.title}</p>
+                <p className="profile-outfit__text">{highest.bottom.title}</p>
+                <p className="profile-outfit__text">{highest.shoes.title}</p>
+                </div>
+                <div className="profile-outfit">
+                <h2 className="profile-outfit__header-low">Your lowest cost per wear outfit</h2>
+                <p className="profile-outfit__text">{"Cost/Wear $" + Math.round((lowest.headwear.cost + lowest.top.cost + lowest.bottom.cost + lowest.shoes.cost) / (lowest.headwear.wears + lowest.top.wears + lowest.bottom.wears + lowest.shoes.wears))}</p>
+                <p className="profile-outfit__text">{lowest.headwear.title}</p>
+                <p className="profile-outfit__text">{lowest.top.title}</p>
+                <p className="profile-outfit__text">{lowest.bottom.title}</p>
+                <p className="profile-outfit__text">{lowest.shoes.title}</p>
+                </div>   
             </div>
+            :
             <div className="profile-outfit">
-            <h2 className="profile-outfit__header-low">Your lowest cost per wear outfit</h2>
-            <p className="profile-outfit__text">{"Cost/Wear $" + Math.round((lowest.headwear.cost + lowest.top.cost + lowest.bottom.cost + lowest.shoes.cost) / (lowest.headwear.wears + lowest.top.wears + lowest.bottom.wears + lowest.shoes.wears))}</p>
-            <p className="profile-outfit__text">{lowest.headwear.title}</p>
-            <p className="profile-outfit__text">{lowest.top.title}</p>
-            <p className="profile-outfit__text">{lowest.bottom.title}</p>
-            <p className="profile-outfit__text">{lowest.shoes.title}</p>
+                <h2 className="profile-outfit__header-high">Looks like you don't have enough clothing to display a full outfit</h2>
+                <h2 className="profile-outfit__header-high">Add more of your clothes, or expand your wardrobe to use this feature</h2>
             </div>
+        }
             <button onClick={handleLogout} className="profile__button">Log out</button>
         </main>
         :

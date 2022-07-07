@@ -24,5 +24,6 @@ function App() {
     </div>
   );
 }
-//<a href="https://www.flaticon.com/free-icons/clothes-hanger" title="clothes hanger icons">Clothes hanger icons created by Icon Hubs - Flaticon</a> add to footer to credit icons
+//credit for icons tshirt and clothes hanger icons, I did not create them. All credit goes to the orinical artists
+//<a href="https://www.flaticon.com/free-icons/clothes-hanger" title="clothes hanger icons">Clothes hanger icons created by Icon Hubs - Flaticon</a>
 export default App;
